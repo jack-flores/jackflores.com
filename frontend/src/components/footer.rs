@@ -26,6 +26,7 @@ pub fn footer() -> Html {
             <div class="container flex items-center justify-center p-5 mx-auto text-gray-400">
                 <div class="mr-auto">{format!("© Copyright Jack Flores {}", chrono::Utc::now().year())}</div>
                 <FooterItem href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</FooterItem>
+                <FooterItem href="https://github.com/jack-flores">{"GitHub"}</FooterItem>
                 <FooterItem href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</FooterItem>
                 <FooterItem href="tel:+19499331333">{"949-933-1333"}</FooterItem>
             </div>

@@ -1,6 +1,5 @@
 mod components;
-
-use components::{footer::*, nav::*, section::*};
+use components::{footer::*, nav::*, section::*, images::*};
 
 use yew::prelude::*;
 
@@ -15,6 +14,12 @@ fn App() -> Html {
                 <NavLink href="#passions">{"passions"}</NavLink>
                 <NavLink href="#contact">{"contact me"}</NavLink>
             </NavBar>
+
+            <ImageCloud>
+            <Image src="/images/mitre_interns.jpeg" alt="MITRE Interns Summer 2024"></Image>
+            <Image src="/images/mystic_fj_tack.jpg" alt="College Sailing"></Image>
+                <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
+            </ImageCloud>
 
             <SectionsWrapper>
                 <Section
