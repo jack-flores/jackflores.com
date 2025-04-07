@@ -23,7 +23,7 @@
 
 
 ### Backend
-- #### Step 1: change to frontend dir
+- #### Step 1: change to backend dir
   - `cd backend`
 
 - #### Run test suite
@@ -37,3 +37,4 @@
 ## References
 - https://github.com/wpcodevo/fullstack-rust-app
 - 'Add Tailwind CSS to your Yew project': https://www.youtube.com/watch?v=DEWoizX96k8
+- https://freefrontend.com/

@@ -26,3 +26,19 @@ pub fn section(props: &SectionProps) -> Html {
         </div>
     }
 }
+
+#[derive(Properties, PartialEq)]
+pub struct SectionWrapperProps {
+    pub children: Children,
+}
+
+#[function_component(SectionsWrapper)]
+pub fn section(props: &SectionWrapperProps) -> Html {
+    html! {
+        <section class="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
+            <div class="container mx-auto space-y-12">
+                { for props.children.iter() }
+            </div>
+        </section>
+    }
+}
