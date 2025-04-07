@@ -9,7 +9,7 @@ pub struct NavLinkProps {
 #[function_component(NavLink)]
 pub fn nav_link(props: &NavLinkProps) -> Html {
     html! {
-        <a href={props.href.clone()} class="border-b-2 border-transparent hover:text-gray-100 hover:border-red-500 mx-1.5 sm:mx-6">
+        <a href={props.href.clone()} class="border-b-2 border-transparent hover:text-gray-100 hover:border-red-500 mx-3">
             { for props.children.iter() }
         </a>
     }
@@ -24,10 +24,13 @@ pub struct NavBarProps {
 pub fn nav_link(props: &NavBarProps) -> Html {
     html! {
         <nav class="bg-gray-800 shadow">
-            <div class="container flex items-center justify-center p-5 mx-auto text-gray-400 capitalize">
-                <a href="" class="mr-auto font-bold text-2xl hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{"jack flores"}</a>
-                { for props.children.iter() }
+            <div class="container flex items-center justify-between flex-wrap p-5 mx-auto text-gray-400 capitalize">
+                <a href="" class="xs:order-1 sm:order-none font-bold text-2xl hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{"jack flores"}</a>
+                <div class="xs:order-2 sm:order-none flex flex-wrap justify-center sm:justify-end w-full sm:w-auto">
+                    { for props.children.iter() }
+                </div>
             </div>
+    
         </nav>
     }
 }
