@@ -12,26 +12,26 @@
 ## To run:
 
 ### Frontend
-#### Step 1: change to frontend dir
-`cd frontend`
+- #### Step 1: change to frontend dir
+  - `cd frontend`
 
-#### Step 2: build tailwind locally
-`npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch`
+- #### Step 2: build tailwind locally
+  - `npx tailwindcss -i ./styles/input.css -o ./styles/output.css`
 
-#### Step 3: start app
-`trunk serve`
+- #### Step 3: start app
+  - `trunk serve`
 
 
 ### Backend
-#### Step 1: change to frontend dir
-`cd backend`
+- #### Step 1: change to frontend dir
+  - `cd backend`
 
-#### Run test suite
-`cargo test`
+- #### Run test suite
+  - `cargo test`
 
-#### Run dev server
-`cargo build`
-`cargo run`
+- #### Run dev server
+  - `cargo build`
+  - `cargo run`
 
 
 ## References
