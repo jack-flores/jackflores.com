@@ -12,12 +12,16 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
 
 ## To run:
 
+You'll need to install Rust and Tailwind:
+- https://www.rust-lang.org/tools/install
+- https://tailwindcss.com/docs/installation
+
 ### Frontend
 - #### Step 1: change to frontend dir
   - `cd frontend`
 
 - #### Step 2: build tailwind locally
-  - `npx tailwindcss -i ./styles/input.css -o ./styles/output.css`
+  - `npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch`
 
 - #### Step 3: start app
   - `trunk serve`
@@ -36,6 +40,9 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
 
 
 ## References
-- https://github.com/wpcodevo/fullstack-rust-app
+- Rust docs: https://docs.rs/
+- Yew docs: https://yew.rs/docs/getting-started/introduction
+- Tailwind docs: https://tailwindcss.com/docs/installation
+- Fullstack rust app example: https://github.com/wpcodevo/fullstack-rust-app
 - 'Add Tailwind CSS to your Yew project': https://www.youtube.com/watch?v=DEWoizX96k8
-- https://freefrontend.com/
+- Took inspiration for tailwind components from here: https://freefrontend.com/

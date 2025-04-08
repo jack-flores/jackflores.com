@@ -7,7 +7,7 @@ use yew::prelude::*;
 #[function_component(Contact)]
 pub fn contact() -> Html {
     html! {
-        <div>
+        <div class="flex flex-col min-h-screen">
             <NavBar>
                 <NavLink href="/about">{"about me"}</NavLink>
                 <NavLink href="/skills">{"skills"}</NavLink>
@@ -17,11 +17,7 @@ pub fn contact() -> Html {
             </NavBar>
 
             <SectionsWrapper>
-                <Section
-                    id="about"
-                    title="contact me"
-                    subtitle=""
-                    reverse={false}>
+                <Section title="contact me" subtitle="">
                         {"Email "} <b>{"(Preferred): "}</b><PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink><br/>
                         {"Mobile Phone: "} <PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink><br/>
                         <PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink><br/>
@@ -30,9 +26,9 @@ pub fn contact() -> Html {
             </SectionsWrapper>
 
             <ImageCloud>
-                <Image src="/images/mitre_interns.jpeg" alt="MITRE Interns Summer 2024"></Image>
-                <Image src="/images/lark_portrait.jpg" alt="College Sailing"></Image>
-                <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
+                <Image src="/images/mystic_fj_tack.jpg" alt="FJ Sailing"></Image>
+                <Image src="/images/jungle-1.jpg" alt="Live at The Jungle"></Image>
+                <Image src="/images/harman_cup.jpg" alt="Harman Cup Winners"></Image>
             </ImageCloud>
             
             <Footer></Footer>
