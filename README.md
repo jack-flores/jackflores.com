@@ -8,6 +8,7 @@
 - Backend:
   - Rust with Actix Web Framework: https://actix.rs/
 
+I chose Rust over JavaScript for this project for many reasons. While I love JS and have a lot of experience with Node, Next, and React, I find Rust to be cleaner, more intuitive, and easier to scale (this project is small now but will continue to grow). I also love and appreciate Tailwind -- I found it easy to integrate Tailwind with the Yew framework.
 
 ## To run:
 
