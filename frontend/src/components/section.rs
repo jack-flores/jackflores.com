@@ -5,7 +5,7 @@ pub struct SectionProps {
     pub id: String,
     pub title: String,
     pub subtitle: String,
-    pub description: String,
+    pub children: Children,
     pub reverse: bool,
 }
 
@@ -21,7 +21,7 @@ pub fn section(props: &SectionProps) -> Html {
             <div class="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
                 <span class="text-xs uppercase dark:text-gray-600">{ &props.subtitle}</span>
                 <h3 class="text-3xl font-bold capitalize">{ &props.title }</h3>
-                <p class="my-6 dark:text-gray-600">{ &props.description }</p>
+                <p class="my-6 dark:text-gray-600">{ for props.children.iter() }</p>
             </div>
         </div>
     }

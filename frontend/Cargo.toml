@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 chrono = "0.4"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
+yew-router = { git = "https://github.com/yewstack/yew.git" }
