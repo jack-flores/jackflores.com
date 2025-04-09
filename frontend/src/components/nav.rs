@@ -29,7 +29,7 @@ pub fn nav_link() -> Html {
                     <NavLink href="/contact">{"contact me"}</NavLink>
                 </div>
             </div>
-    
+
         </nav>
     }
 }

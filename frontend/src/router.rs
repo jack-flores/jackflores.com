@@ -2,10 +2,11 @@ use crate::components;
 use crate::pages;
 
 use crate::Home;
+use components::{footer::*, nav::*, section::*};
 use pages::contact::*;
 use pages::experience::*;
+use pages::passions::*;
 use pages::projects::*;
-use components::{footer::*, nav::*, section::*};
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -20,6 +21,8 @@ enum Route {
     Contact,
     #[at("/projects")]
     Projects,
+    #[at("/passions")]
+    Passions,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -31,7 +34,8 @@ fn switch(routes: Route) -> Html {
         Route::Experience => html! { <Experience /> },
         Route::Contact => html! { <Contact /> },
         Route::Projects => html! { <Projects /> },
-        Route::NotFound => html! { 
+        Route::Passions => html! { <Passions /> },
+        Route::NotFound => html! {
             <div class="flex flex-col min-h-screen">
                 <NavBar/>
                 <SectionsWrapper>

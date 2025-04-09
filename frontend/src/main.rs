@@ -2,16 +2,26 @@ mod components;
 mod pages;
 mod router;
 
+use components::{footer::*, images::*, links::*, nav::*, section::*};
 use router::App;
-use components::{footer::*, nav::*, section::*, images::*, links::*};
 
 use gloo_timers::callback::Interval;
 use yew::prelude::*;
 
 #[function_component(Home)]
 fn home() -> Html {
-    let attributes = ["Software Engineer", "Music Producer", "Athlete", "Leader", "Songwriter"];
-    
+    let attributes = [
+        "Software Engineer",
+        "Musician",
+        "Sailor",
+        "Leader",
+        "Songwriter",
+        "Rust Enthusiast",
+        "Music Engineer",
+        "Performer",
+        "Fullstack Engineer",
+    ];
+
     let counter = use_state(|| 0);
     let counter_clone = counter.clone();
 
@@ -37,7 +47,7 @@ fn home() -> Html {
                 <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
             </ImageCloud>
 
-            <div class="flex justify-center">{"My name is "} <b>{" Jack Flores "}</b> {", and I'm a "} <span class="animate-bounce font-bold">{ attributes[*counter] }</span></div>
+            <div class="text-3xl flex justify-center">{"My name is"} {"\u{00a0}"} <p class="font-bold">{" Jack Flores "}</p> {", and I'm a\u{00a0}"} <span class="animate-pulse duration-100 font-bold underline decoration-double decoration-red-500">{ attributes[*counter] }</span>{"."}</div>
 
             <SectionsWrapper>
                 <Section title="about me" subtitle="Engineer. Leader. Artist.">

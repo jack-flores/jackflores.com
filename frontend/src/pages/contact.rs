@@ -1,6 +1,6 @@
 use crate::components;
 
-use components::{footer::*, nav::*, section::*, images::*, links::*};
+use components::{footer::*, images::*, links::*, nav::*, section::*};
 
 use yew::prelude::*;
 
@@ -10,11 +10,11 @@ pub fn contact() -> Html {
         <div class="flex flex-col min-h-screen">
             <NavBar/>
 
-            <SectionsWrapper>
-                <Section title="contact me" subtitle="">
+            <SectionsWrapper header="Contact Me">
+                <Section title="Methods of Contact" subtitle="">
                         {"Email "} <b>{"(Preferred): "}</b><PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink><br/>
                         {"Mobile Phone: "} <PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink><br/>
-                        <PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink><br/>
+                        {"Connect with me on "}<PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink><br/>
                         <PageBodyLink href="https://github.com/jack-flores">{"GitHub"}</PageBodyLink>
                 </Section>
             </SectionsWrapper>
@@ -24,7 +24,7 @@ pub fn contact() -> Html {
                 <Image src="/images/jungle-1.jpg" alt="Live at The Jungle"></Image>
                 <Image src="/images/harman_cup.jpg" alt="Harman Cup Winners"></Image>
             </ImageCloud>
-            
+
             <Footer/>
         </div>
     }

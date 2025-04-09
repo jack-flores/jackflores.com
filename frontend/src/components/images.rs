@@ -10,7 +10,7 @@ pub struct ImageProps {
 pub fn image(props: &ImageProps) -> Html {
     html! {
         <a href={props.src.clone()} class="group relative flex h-[25vh] xl:h-[40vh] [@media(max-height:640px)]:h-[50vh] items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2">
-            <img 
+            <img
                 class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                 src={props.src.clone()}
                 alt={props.alt.clone()}/>

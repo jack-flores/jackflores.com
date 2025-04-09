@@ -1,6 +1,6 @@
 use crate::components;
 
-use components::{footer::*, nav::*, section::*, images::*, links::*};
+use components::{footer::*, images::*, links::*, nav::*, section::*};
 
 use yew::prelude::*;
 
@@ -10,10 +10,10 @@ pub fn projects() -> Html {
         <div class="flex flex-col min-h-screen">
             <NavBar/>
 
-            <SectionsWrapper>
+            <SectionsWrapper header="Projects">
                 <Section title="Portfolio Website -- Where you are now!" subtitle="April 2025 - Present">
                     {"Visit the "}<PageBodyLink href="https://github.com/jack-flores/portfolio">{"GitHub repository linked here!"}</PageBodyLink><br/>
-                    <b>{"Tools Used: "}</b> {"Rust, Yew Framework, Tailwind CSS, Actix Web Framework, GitHub"}
+                    <b>{"Tools Used: "}</b> {"Rust, Yew Framework (frontend), Tailwind CSS, Actix Web Framework (backend), GitHub"}
                 </Section>
                 <Section title="DIY Gamma Ray Spectrometer" subtitle="September 2024 - May 2025">
                     <b>{"Tools Used: "}</b> {"C++, Arduino, Analog Circuitry, KiCAD"}
@@ -31,7 +31,7 @@ pub fn projects() -> Html {
                 <Image src="/images/lark_portrait.jpg" alt="College Sailing"></Image>
                 <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
             </ImageCloud>
-            
+
             <Footer/>
         </div>
     }
