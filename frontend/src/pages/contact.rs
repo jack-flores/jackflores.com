@@ -8,13 +8,7 @@ use yew::prelude::*;
 pub fn contact() -> Html {
     html! {
         <div class="flex flex-col min-h-screen">
-            <NavBar>
-                <NavLink href="/about">{"about me"}</NavLink>
-                <NavLink href="/skills">{"skills"}</NavLink>
-                <NavLink href="/projects">{"projects"}</NavLink>
-                <NavLink href="/passions">{"passions"}</NavLink>
-                <NavLink href="/contact">{"contact me"}</NavLink>
-            </NavBar>
+            <NavBar/>
 
             <SectionsWrapper>
                 <Section title="contact me" subtitle="">
@@ -31,7 +25,7 @@ pub fn contact() -> Html {
                 <Image src="/images/harman_cup.jpg" alt="Harman Cup Winners"></Image>
             </ImageCloud>
             
-            <Footer></Footer>
+            <Footer/>
         </div>
     }
 }

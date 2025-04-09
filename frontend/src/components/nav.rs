@@ -15,19 +15,18 @@ pub fn nav_link(props: &NavLinkProps) -> Html {
     }
 }
 
-#[derive(Properties, PartialEq)]
-pub struct NavBarProps {
-    pub children: Children,
-}
-
 #[function_component(NavBar)]
-pub fn nav_link(props: &NavBarProps) -> Html {
+pub fn nav_link() -> Html {
     html! {
         <nav class="bg-gray-800 shadow">
             <div class="container flex items-center justify-between flex-wrap p-5 mx-auto text-gray-400 capitalize">
                 <a href="/" class="xs:order-1 sm:order-none font-bold text-2xl hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{"jack flores"}</a>
                 <div class="xs:order-2 sm:order-none flex flex-wrap justify-center sm:justify-end w-full sm:w-auto">
-                    { for props.children.iter() }
+                    <NavLink href="/">{"about me"}</NavLink>
+                    <NavLink href="/experience">{"experience"}</NavLink>
+                    <NavLink href="/projects">{"projects"}</NavLink>
+                    <NavLink href="/passions">{"passions"}</NavLink>
+                    <NavLink href="/contact">{"contact me"}</NavLink>
                 </div>
             </div>
     
