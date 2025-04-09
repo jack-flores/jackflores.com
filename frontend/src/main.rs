@@ -19,8 +19,8 @@ fn home() -> Html {
         "Rust Enthusiast",
         "Music Engineer",
         "Performer",
-        "Fullstack Engineer",
-        "Disc Golfer"
+        "Full-Stack Developer",
+        "Disc Golfer",
     ];
 
     let counter = use_state(|| 0);
@@ -57,6 +57,7 @@ fn home() -> Html {
                     <PageBodyLink href="https://github.com/jack-flores/portfolio">{"GitHub repository linked here!"}</PageBodyLink>
                 </Section>
                 <Section title="skills" subtitle="Fullstack. Data. Teamwork.">
+                    <div class="text-lg"><PageBodyLink href="/experience">{"Click here to read more about my work experience."}</PageBodyLink></div><br/>
                     <b>{"Programming Languages:"}</b> {" Rust, Python, C, C++, Node.js, Next.js, React, Pandas"}<br/>
                     <b>{"Tools:"}</b> {" PostgreSQL, Git/GitHub/GitLab, Docker, AWS, Azure, MongoDB, Prisma, Linux, Arduino (hardware & programming)"}<br/>
                     <b>{"Methodologies:"}</b> {" CI/CD, Unit Testing, Integration Testing"}
@@ -65,7 +66,8 @@ fn home() -> Html {
                     <PageBodyLink href="/projects">{"Click here to visit my projects page!"}</PageBodyLink>
                 </Section>
                 <Section title="passions" subtitle="Songwriter. Athlete. Performer.">
-                    {"I am a self-taught songwriter and music producer. I play every instrument you would see on a rock stage, and by myself, I have written, recorded, and produced dozens of songs. I also love performing music live and have played numerous shows with my band Bad Neighbours. I also love sailing, snowboarding, and playing disc golf"}
+                    {"I am a self-taught songwriter and music producer. I play every instrument you would see on a rock stage, and by myself, I have written, recorded, and produced dozens of songs. I also love performing music live and have played numerous shows with my band Bad Neighbours. I also love sailing, snowboarding, and playing disc golf"}<br/>
+                    <PageBodyLink href="/passions">{"Click here to read more about my passions!"}</PageBodyLink>
                 </Section>
             </SectionsWrapper>
             <Footer/>
