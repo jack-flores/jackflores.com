@@ -26,7 +26,7 @@ pub fn nav_link() -> Html {
                     <NavLink href="/experience">{"experience"}</NavLink>
                     <NavLink href="/projects">{"projects"}</NavLink>
                     <NavLink href="/passions">{"passions"}</NavLink>
-                    <NavLink href="/contact">{"contact me"}</NavLink>
+                    <NavLink href="/contact">{"contact"}</NavLink>
                 </div>
             </div>
 

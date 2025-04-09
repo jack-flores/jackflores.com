@@ -20,7 +20,7 @@ pub fn contact() -> Html {
             </SectionsWrapper>
 
             <ImageCloud>
-                <Image src="/images/mystic_fj_tack.jpg" alt="FJ Sailing"></Image>
+                <Image src="/images/mystic_fj_tack.jpeg" alt="FJ Sailing"></Image>
                 <Image src="/images/jungle-1.jpg" alt="Live at The Jungle"></Image>
                 <Image src="/images/harman_cup.jpg" alt="Harman Cup Winners"></Image>
             </ImageCloud>

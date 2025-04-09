@@ -22,7 +22,7 @@ pub fn experience() -> Html {
 
             <ImageCloud>
                 <Image src="/images/mitre_interns.jpeg" alt="MITRE Interns Summer 2024"></Image>
-                <Image src="/images/lark_portrait.jpg" alt="College Sailing"></Image>
+                <Image src="/images/farr-30.jpg" alt="IOR 2021"></Image>
                 <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
             </ImageCloud>
 

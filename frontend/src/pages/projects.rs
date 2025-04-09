@@ -27,9 +27,9 @@ pub fn projects() -> Html {
             </SectionsWrapper>
 
             <ImageCloud>
-                <Image src="/images/mitre_interns.jpeg" alt="MITRE Interns Summer 2024"></Image>
-                <Image src="/images/lark_portrait.jpg" alt="College Sailing"></Image>
-                <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
+                <Image src="/images/mitre_pres.jpg" alt="MITRE Presentation"></Image>
+                <Image src="/images/lark-wing.jpeg" alt="Lark Sailing"></Image>
+                <Image src="/images/homestart_presentation.jpg" alt="Jumbocode Homestart Team"></Image>
             </ImageCloud>
 
             <Footer/>

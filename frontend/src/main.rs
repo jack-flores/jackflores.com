@@ -20,6 +20,7 @@ fn home() -> Html {
         "Music Engineer",
         "Performer",
         "Fullstack Engineer",
+        "Disc Golfer"
     ];
 
     let counter = use_state(|| 0);
@@ -42,12 +43,12 @@ fn home() -> Html {
             <NavBar/>
 
             <ImageCloud>
-                <Image src="/images/mitre_interns.jpeg" alt="MITRE Interns Summer 2024"></Image>
-                <Image src="/images/lark_portrait.jpg" alt="College Sailing"></Image>
-                <Image src="/images/as_interns.jpeg" alt="AS Software Interns Summer 2023"></Image>
+                <Image src="/images/lark_portrait.jpeg" alt="College Sailing"></Image>
+                <Image src="/images/media_day.jpg" alt="Tufts Media Day"></Image>
+                <Image src="/images/jungle-2.jpeg" alt="Bad Neighbours at The Jungle"></Image>
             </ImageCloud>
 
-            <div class="text-3xl flex justify-center">{"My name is"} {"\u{00a0}"} <p class="font-bold">{" Jack Flores "}</p> {", and I'm a\u{00a0}"} <span class="animate-pulse duration-100 font-bold underline decoration-double decoration-red-500">{ attributes[*counter] }</span>{"."}</div>
+            <div class="md:text-3xl sm:text-2xl text-lg flex justify-center">{"My name is"} {"\u{00a0}"} <p class="font-bold">{" Jack Flores "}</p> {", and I'm a\u{00a0}"} <span class="animate-pulse duration-100 font-bold underline decoration-double decoration-red-500">{ attributes[*counter] }</span>{"."}</div>
 
             <SectionsWrapper>
                 <Section title="about me" subtitle="Engineer. Leader. Artist.">
