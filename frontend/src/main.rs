@@ -53,7 +53,7 @@ fn home() -> Html {
             <SectionsWrapper>
                 <Section title="about me" subtitle="Engineer. Leader. Artist.">
                     {"I am a senior at Tufts University graduating this May with a Bachelor of Science in Computer Science and a minor in Engineering Management. After four years of balancing a rigorous course load, a varsity sport, leading a rock band, and working two incredible internships, my skillset and work ethic are exceptional. I have a demonstrated aptitude for leadership, having twice been voted co-captain by my teammates in varsity athletics."}<br/><br/>
-                    {"I made this website to demonstrate my capabilities as a fullstack developer while providing an easily navigable portfolio. Everything you see was "} <b>{"built from scratch using Rust"}</b>{" -- my favorite programming language! Check out this project's "}
+                    {"I built this website to demonstrate my capabilities as a fullstack developer while providing an easily navigable portfolio. Everything you see was "} <b>{"built from scratch using Rust"}</b>{" -- my favorite programming language! Check out this project's "}
                     <PageBodyLink href="https://github.com/jack-flores/portfolio">{"GitHub repository linked here!"}</PageBodyLink>
                 </Section>
                 <Section title="skills" subtitle="Fullstack. Data. Teamwork.">

@@ -12,9 +12,9 @@ pub fn experience() -> Html {
 
             <SectionsWrapper header="Work Experience">
                 <Section title="The MITRE Corporation -- Computer Science Intern" subtitle="June - August 2024 | Bedford, MA">
-                    {"At "} <PageBodyLink href="https://www.mitre.org/">{"The MITRE Corporation"}</PageBodyLink> {", I interned within the Center For Securing the Homeland, working on projects supporting the "} <PageBodyLink href="https://www.dhs.gov/science-and-technology/hssedi">{"Homeland Security Systems Engineering and Development Institute FFRDC"} </PageBodyLink> {". I worked on two renowned projects -- "} <PageBodyLink href="https://www.cve.org/">{"Common Vulnerabilities and Exposures (CVE)"}</PageBodyLink> {", and "} <PageBodyLink href="https://cwe.mitre.org/">{"Common Weakness Enumeration (CWE)"}</PageBodyLink> {". I was honored to contribute to two crucial projects that are having a positive impact in the world."}<br/><br/>
+                    {"At "} <PageBodyLink href="https://www.mitre.org/">{"The MITRE Corporation"}</PageBodyLink> {", I interned within the Center For Securing the Homeland and worked on projects supporting the "} <PageBodyLink href="https://www.dhs.gov/science-and-technology/hssedi">{"Homeland Security Systems Engineering and Development Institute FFRDC"} </PageBodyLink> {". I worked on two renowned projects -- "} <PageBodyLink href="https://www.cve.org/">{"Common Vulnerabilities and Exposures (CVE)"}</PageBodyLink> {", and "} <PageBodyLink href="https://cwe.mitre.org/">{"Common Weakness Enumeration (CWE)"}</PageBodyLink> {". I was honored to contribute to two crucial projects that are having a positive impact in the world."}<br/><br/>
 
-                    <b>{"Highlights of the work I did at MITRE:"}</b><br/>
+                    <b>{"Highlights from the work I did at MITRE:"}</b><br/>
                     <ul class="list-disc list-inside">
                         <li>{"Implemented, tested, and delivered a new feature for the "} <PageBodyLink href="https://github.com/CVEProject/cve-services/">{"CVE Services API"}</PageBodyLink> {" to track API usage. "} <PageBodyLink href="https://github.com/CVEProject/cve-services/pull/1262">{"View my merged pull request here!"}</PageBodyLink></li>
                         <li>{"Wrote Python programs to report missing data in the CWE database."}</li>
@@ -27,7 +27,7 @@ pub fn experience() -> Html {
                     {"At "} <PageBodyLink href="https://www.as-software.com/">{"AS Software"}</PageBodyLink> {", I worked on a three-person intern team to build AS-CloudFax, a project that allows healthcare professionals to fax medical reports and images while eliminating the need for on-premises faxing hardware and server infrastructure. AS-CloudFax is cloud-native, multi-tenant, and designed to transmit PHI and PII securely."}<br/><br/>
                     {"AS-CloudFax is written with the Rust programming language using the Actix Web framework, Tokio, and SQLx with a PostgreSQL database. Through this setup, AS-CloudFax provides a reliable REST API that incorporates webhooks to deliver real-time updates. Requests to AS-CloudFax are validated for format and idempotency, and the outbox pattern is utilized to perform asynchronous actions with third-party services such as Microsoft Azure."}<br/><br/>
                     {"Using Scrum, the Agile methodology, and an automated CI/CD pipeline, we were able to build the AS-CloudFax project in ten weeks."}<br/><br/>
-                    <b>{"Tools Used: "}</b> {"Rust, PostgreSQL, Docker, Git/GitHub, Azure, CI/CD, Agile/Scrum"}
+                    <b>{"Tools Used: "}</b> {"Rust, PostgreSQL, Docker, Git/GitHub, Azure, CI/CD, Agile/Scrum, Unit Testing, Integration Testing"}
                 </Section>
             </SectionsWrapper>
 
