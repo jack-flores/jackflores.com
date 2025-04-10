@@ -12,10 +12,10 @@ pub fn contact() -> Html {
 
             <SectionsWrapper header="Contact Me">
                 <Section title="Methods of Contact" subtitle="">
-                        {"Email "} <b>{"(Preferred): "}</b><PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink><br/>
-                        {"Mobile Phone: "} <PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink><br/>
-                        {"Connect with me on "}<PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink><br/>
-                        <PageBodyLink href="https://github.com/jack-flores">{"GitHub"}</PageBodyLink>
+                        <b>{"Email "} {"(Preferred): "}</b><PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink><br/>
+                        <b>{"Mobile Phone: "}</b> <PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink><br/>
+                        <PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"Connect with me on LinkedIn"}</PageBodyLink><br/>
+                        <PageBodyLink href="https://github.com/jack-flores">{"Check out my GitHub"}</PageBodyLink>
                 </Section>
             </SectionsWrapper>
 

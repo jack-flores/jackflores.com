@@ -12,9 +12,13 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
 
 ## To run:
 
-You'll need to install Rust and Tailwind:
-- https://www.rust-lang.org/tools/install
-- https://tailwindcss.com/docs/installation
+### Setup
+- You'll need to install Rust and Tailwind:
+  - https://www.rust-lang.org/tools/install
+  - https://tailwindcss.com/docs/installation
+- Then, follow the steps on this page to compile Rust to WebAssembly and install Trunk
+  - https://yew.rs/docs/getting-started/introduction
+
 
 ### Frontend
 - #### Step 1: change to frontend dir
@@ -24,7 +28,7 @@ You'll need to install Rust and Tailwind:
   - `npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch`
 
 - #### Step 3: start app
-  - `trunk serve`
+  - in a new shell: `trunk serve`
 
 
 ### Backend
