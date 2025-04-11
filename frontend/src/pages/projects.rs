@@ -42,7 +42,7 @@ pub fn projects() -> Html {
                     </ul><br/>
                     <b>{"Tools Used: "}</b> {"C++, OpenGL"}<br/><br/>
                     <b>{"Demo: "}</b><br/>
-                    <video class="lg:w-[50%] sm:w-[70%] xs:w-[90%]" autoplay=true controls=true muted=true>
+                    <video class="lg:w-[50%] sm:w-[70%] xs:w-[90%]" autoplay=true controls=true muted=true playsinline=true>
                         <source src="/images/ray-trace-demo.mp4" type="video/mp4"/>
                         {"Unable to show video -- your browser does not support the video tag."}
                     </video>
