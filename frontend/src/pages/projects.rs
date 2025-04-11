@@ -16,10 +16,11 @@ pub fn projects() -> Html {
                     <b>{"Highlights:"}</b><br/>
                     <ul class="list-disc list-inside">
                         <li>{"Built Rust/Yew component modules for easy reproducibility and site-wide design consistency."}</li>
-                        <li>{"Developed a REST API and an integration test suite with the Actix Web framework for Rust."} </li>
                         <li>{"Designed and constructed responsive and user-friendly web-pages using Yew components, HTML, and Tailwind CSS."}</li>
+                        <li>{"Developed a REST API and an integration test suite with the Actix Web framework for Rust."} </li>
+                        <li>{"Containerized the project with Docker and deployed with Fly.io."} </li>
                     </ul><br/>
-                    <b>{"Tools Used: "}</b> {"Rust, Yew Framework (frontend), Tailwind CSS, Actix Web Framework (backend), GitHub, HTML, Project Design, Project Management"}
+                    <b>{"Tools Used: "}</b> {"Rust, Yew Framework (frontend), Tailwind CSS, Actix Web Framework (backend), GitHub, HTML, Docker, Fly.io, Project Design, Project Management"}
                 </Section>
                 <Section title="DIY Gamma Ray Spectrometer" subtitle="September 2024 - May 2025">
                     {"For my Senior Capstone Project, I and a team of four other talented engineers developed a low-cost, easily reproducible alternative to traditional spectroscopic instruments."}<br/><br/>
