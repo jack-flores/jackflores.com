@@ -1,0 +1,10 @@
+pub const COLOR_BG_DARK_1: &str = "red-950";
+pub const COLOR_BG_DARK_2: &str = "gray-800";
+pub const COLOR_BG_LIGHT_1: &str = "red-100";
+pub const COLOR_BG_LIGHT_2: &str = "gray-200";
+pub const COLOR_TEXT_DECORATION: &str = "red-500";
+pub const COLOR_TEXT_LOGO: &str = "gray-200";
+pub const COLOR_TEXT_PRIMARY: &str = "gray-600";
+pub const COLOR_TEXT_TITLE: &str = "black";
+pub const COLOR_TEXT_NAV: &str = "gray-400";
+pub const COLOR_TEXT_NAV_HOVER: &str = "gray-100";

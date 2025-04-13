@@ -1,9 +1,11 @@
 mod components;
 mod pages;
 mod router;
+mod styles;
 
 use components::{footer::*, images::*, links::*, nav::*, section::*};
 use router::App;
+use styles::{COLOR_BG_LIGHT_1, COLOR_TEXT_DECORATION, COLOR_TEXT_TITLE};
 
 use gloo_timers::callback::Interval;
 use yew::prelude::*;
@@ -48,9 +50,9 @@ fn home() -> Html {
                 <Image src="/images/jungle-2.jpeg" alt="Bad Neighbours at The Jungle"></Image>
             </ImageCloud>
 
-            <div class="md:text-3xl sm:text-2xl text-lg text-black font-bold flex flex-wrap justify-center bg-gradient-to-r from-red-100 via-gray-200 to-red-100 p-1">
+            <div class={format!("md:text-3xl sm:text-2xl text-lg text{title} font-bold flex flex-wrap justify-center bg-gradient-to-r from-{bg_l_1} via-gray-200 to-{bg_l_1} p-1", bg_l_1 = COLOR_BG_LIGHT_1, title = COLOR_TEXT_TITLE)}>
                 <h2>{"My name is Jack Flores, and I'm a\u{00a0}"}</h2>
-                <h2 class="inline-block animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black underline decoration-double decoration-red-500">
+                <h2 class={format!("inline-block animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-{title} underline decoration-double decoration-{deco}", deco = COLOR_TEXT_DECORATION, title = COLOR_TEXT_TITLE)}>
                     {{ attributes[*counter] }}{"."}
                 </h2>
             </div>

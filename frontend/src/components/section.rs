@@ -1,3 +1,5 @@
+use crate::styles::*;
+
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]
@@ -11,10 +13,10 @@ pub struct SectionProps {
 pub fn section(props: &SectionProps) -> Html {
     html! {
         <div class="flex flex-col overflow-hidden rounded-md shadow-sm">
-            <div class="flex flex-col justify-center flex-1 p-6 bg-gradient-to-br from-red-100 via-gray-200 to-red-100">
-                <span class="text-xs uppercase text-gray-600">{ &props.subtitle }</span>
-                <h3 class="text-2xl font-bold capitalize">{ &props.title }</h3>
-                <p class="my-6 text-gray-600">{ for props.children.iter() }</p>
+            <div class={format!("flex flex-col justify-center flex-1 p-6 text-{prim} bg-gradient-to-br from-{bg_l_1} via-{bg_l_2} to-{bg_l_1}", bg_l_1 = COLOR_BG_LIGHT_1, bg_l_2 = COLOR_BG_LIGHT_2, prim = COLOR_TEXT_PRIMARY)}>
+                <span class="text-xs uppercase">{ &props.subtitle }</span>
+                <h3 class={format!("text-2xl font-bold capitalize text-{title}", title = COLOR_TEXT_TITLE)}>{ &props.title }</h3>
+                <p class="my-6">{ for props.children.iter() }</p>
             </div>
         </div>
     }
@@ -32,7 +34,7 @@ pub fn sections_wrapper(props: &SectionWrapperProps) -> Html {
     let header = match &props.header {
         Some(text) => {
             html! {
-                <div class="bg-gradient-to-r from-red-100 via-gray-200 to-red-100"><h2 class="ml-10 mb-1 mt-3 text-gray-800 text-4xl font-bold capitalize underline decoration-double decoration-red-500">{ text }</h2></div>
+                <div class={format!("bg-gradient-to-r from-{bg_l_1} via-{bg_l_2} to-{bg_l_1}", bg_l_1 = COLOR_BG_LIGHT_1, bg_l_2 = COLOR_BG_LIGHT_2)}><h2 class={format!("ml-10 mb-1 mt-3 text-{title} text-4xl font-bold capitalize underline decoration-double decoration-{deco}", deco = COLOR_TEXT_DECORATION, title = COLOR_TEXT_TITLE)}>{ text }</h2></div>
             }
         }
         None => html! {},
@@ -40,7 +42,7 @@ pub fn sections_wrapper(props: &SectionWrapperProps) -> Html {
     html! {
         <>
             {header}
-            <section class="p-4 text-gray-800 bg-gradient-to-br from-red-950 via-gray-800 to-red-950">
+            <section class={format!("p-4 text-{prim} bg-gradient-to-br from-{bg_d_1} via-{bg_d_2} to-{bg_d_1}", bg_d_1 = COLOR_BG_DARK_1, bg_d_2 = COLOR_BG_DARK_2, prim = COLOR_TEXT_PRIMARY)}>
                 <div class="container mx-auto space-y-8">
                     { for props.children.iter() }
                 </div>

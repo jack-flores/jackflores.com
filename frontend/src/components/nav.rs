@@ -1,3 +1,5 @@
+use crate::styles::*;
+
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]
@@ -9,7 +11,7 @@ pub struct NavLinkProps {
 #[function_component(NavLink)]
 pub fn nav_link(props: &NavLinkProps) -> Html {
     html! {
-        <a href={props.href.clone()} class="border-b-2 border-transparent hover:text-gray-100 hover:border-red-500 mx-3">
+        <a href={props.href.clone()} class={format!("border-b-2 border-transparent hover:text-{nav_hov} hover:border-{deco} mx-3", deco = COLOR_TEXT_DECORATION, nav_hov = COLOR_TEXT_NAV_HOVER)}>
             { for props.children.iter() }
         </a>
     }
@@ -18,9 +20,9 @@ pub fn nav_link(props: &NavLinkProps) -> Html {
 #[function_component(NavBar)]
 pub fn nav_link() -> Html {
     html! {
-        <nav class="bg-gradient-to-r from-gray-800 via-red-950 to-gray-800">
-            <div class="container flex items-center justify-between flex-wrap p-5 mx-auto text-gray-400 capitalize">
-                <a href="/" class="xs:order-1 sm:order-none font-bold text-2xl hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{"jack flores"}</a>
+        <nav class={format!("bg-gradient-to-r from-{bg_d_2} via-{bg_d_1} to-{bg_d_2}", bg_d_1 = COLOR_BG_DARK_1, bg_d_2 = COLOR_BG_DARK_2)}>
+            <div class={format!("container flex items-center justify-between flex-wrap p-5 mx-auto text-{nav} capitalize", nav = COLOR_TEXT_NAV)}>
+                <a href="/" class={format!("xs:order-1 sm:order-none font-bold text-2xl hover:text-{deco} outline hover:outline-{nav_hov} text-{logo} outline-{deco}", deco = COLOR_TEXT_DECORATION, logo = COLOR_TEXT_LOGO, nav_hov = COLOR_TEXT_NAV_HOVER)}>{"jack flores"}</a>
                 <div class="xs:order-2 sm:order-none flex flex-wrap justify-center sm:justify-end w-full sm:w-auto">
                     <NavLink href="/">{"about me"}</NavLink>
                     <NavLink href="/experience">{"experience"}</NavLink>
