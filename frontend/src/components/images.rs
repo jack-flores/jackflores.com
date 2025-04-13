@@ -1,4 +1,4 @@
-use crate::styles::{COLOR_BG_DARK_1, COLOR_BG_DARK_2};
+use crate::constants::{COLOR_BG_DARK_1, COLOR_BG_DARK_2};
 
 use yew::prelude::*;
 

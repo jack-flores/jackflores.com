@@ -1,4 +1,4 @@
-use crate::styles::*;
+use crate::constants::*;
 
 use yew::prelude::*;
 
