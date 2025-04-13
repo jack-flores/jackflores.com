@@ -48,9 +48,13 @@ fn home() -> Html {
                 <Image src="/images/jungle-2.jpeg" alt="Bad Neighbours at The Jungle"></Image>
             </ImageCloud>
 
-            <div class="md:text-3xl sm:text-2xl xs:text-xl text-lg text-black font-bold flex justify-center bg-gradient-to-r from-red-100 via-gray-200 to-red-100 p-1">
-                <h2>{"My name is Jack Flores, and I'm a\u{00a0}"}</h2><h2 class="inline-block animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black underline decoration-double decoration-red-500">{attributes[*counter]}{"."}</h2>
+            <div class="md:text-3xl sm:text-2xl text-lg text-black font-bold flex flex-wrap justify-center bg-gradient-to-r from-red-100 via-gray-200 to-red-100 p-1">
+                <h2>{"My name is Jack Flores, and I'm a\u{00a0}"}</h2>
+                <h2 class="inline-block animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black underline decoration-double decoration-red-500">
+                    {{ attributes[*counter] }}{"."}
+                </h2>
             </div>
+
 
             <SectionsWrapper>
                 <Section title="about me" subtitle="Engineer. Leader. Artist.">
