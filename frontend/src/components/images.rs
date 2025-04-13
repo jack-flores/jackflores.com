@@ -26,7 +26,7 @@ pub struct ImageCloudProps {
 #[function_component(ImageCloud)]
 pub fn image_cloud(props: &ImageCloudProps) -> Html {
     html! {
-        <div class="columns-3 gap-4 space-y-4">
+        <div class="sm:columns-3 xs:columns-1 gap-4 space-y-4 bg-gradient-to-br from-red-950 via-gray-800 to-red-950">
             { for props.children.iter() }
         </div>
     }

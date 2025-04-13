@@ -11,7 +11,7 @@ pub struct SectionProps {
 pub fn section(props: &SectionProps) -> Html {
     html! {
         <div class="flex flex-col overflow-hidden rounded-md shadow-sm">
-            <div class="flex flex-col justify-center flex-1 p-6 bg-gray-50">
+            <div class="flex flex-col justify-center flex-1 p-6 bg-gradient-to-br from-red-100 via-gray-200 to-red-100">
                 <span class="text-xs uppercase text-gray-600">{ &props.subtitle }</span>
                 <h3 class="text-2xl font-bold capitalize">{ &props.title }</h3>
                 <p class="my-6 text-gray-600">{ for props.children.iter() }</p>
@@ -31,15 +31,17 @@ pub struct SectionWrapperProps {
 pub fn sections_wrapper(props: &SectionWrapperProps) -> Html {
     let header = match &props.header {
         Some(text) => {
-            html! { <h2 class="ml-10 mb-1 mt-3 text-gray-800 text-4xl font-bold capitalize underline decoration-double decoration-red-500">{ text }</h2> }
+            html! {
+                <div class="bg-gradient-to-r from-red-100 via-gray-200 to-red-100"><h2 class="ml-10 mb-1 mt-3 text-gray-800 text-4xl font-bold capitalize underline decoration-double decoration-red-500">{ text }</h2></div>
+            }
         }
         None => html! {},
     };
     html! {
         <>
             {header}
-            <section class="p-4 bg-gray-100 text-gray-800">
-                <div class="container mx-auto space-y-12">
+            <section class="p-4 text-gray-800 bg-gradient-to-br from-red-950 via-gray-800 to-red-950">
+                <div class="container mx-auto space-y-8">
                     { for props.children.iter() }
                 </div>
             </section>

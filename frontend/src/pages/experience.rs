@@ -15,7 +15,7 @@ pub fn experience() -> Html {
                     {"At "} <PageBodyLink href="https://www.mitre.org/">{"The MITRE Corporation"}</PageBodyLink> {", I interned within the Center For Securing the Homeland and worked on projects supporting the "} <PageBodyLink href="https://www.dhs.gov/science-and-technology/hssedi">{"Homeland Security Systems Engineering and Development Institute FFRDC"} </PageBodyLink> {". I worked on two renowned projects -- "} <PageBodyLink href="https://www.cve.org/">{"Common Vulnerabilities and Exposures (CVE)"}</PageBodyLink> {", and "} <PageBodyLink href="https://cwe.mitre.org/">{"Common Weakness Enumeration (CWE)"}</PageBodyLink> {". I was honored to contribute to two crucial projects that are having a positive impact in the world."}<br/><br/>
 
                     <b>{"Highlights from the work I did at MITRE:"}</b><br/>
-                    <ul class="list-disc list-inside">
+                    <ul class="list-disc list-outside pl-4">
                         <li>{"Implemented, tested, and delivered a new feature for the "} <PageBodyLink href="https://github.com/CVEProject/cve-services/">{"CVE Services API"}</PageBodyLink> {" to track API usage. "} <PageBodyLink href="https://github.com/CVEProject/cve-services/pull/1262">{"View my merged pull request here!"}</PageBodyLink></li>
                         <li>{"Wrote Python programs to report missing data in the CWE database."}</li>
                         <li>{"Conducted a security assessment of a live service and outlined recommendations for security improvements."}</li>

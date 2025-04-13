@@ -1,5 +1,6 @@
 use chrono::Datelike;
 use yew::prelude::*;
+use yew_icons::{Icon, IconId};
 
 #[derive(Properties, PartialEq)]
 pub struct FooterItemProps {
@@ -22,14 +23,14 @@ pub fn footer_item(props: &FooterItemProps) -> Html {
 #[function_component(Footer)]
 pub fn footer() -> Html {
     html! {
-        <div class="bg-gray-800 shadow w-full mt-auto">
+        <div class="bg-gradient-to-r from-gray-800 via-red-950 to-gray-800 w-full mt-auto">
             <div class="container text-xs flex items-center justify-center p-5 mx-auto text-gray-400">
-                <a href="https://github.com/jack-flores/portfolio" class="mr-auto font-bold hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{format!("© Copyright Jack Flores {}", chrono::Utc::now().year())}</a>
-                <a href="https://github.com/jack-flores/portfolio" class="hidden md:flex mr-auto border-b-2 border-transparent hover:text-gray-100 hover:border-red-500">{"GitHub Repository"}</a>
-                <FooterItem href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</FooterItem>
-                <FooterItem href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</FooterItem>
-                <FooterItem href="tel:+19499331333">{"949-933-1333"}</FooterItem>
-                <a href="/contact" class="sm:hidden xs:flex ml-auto">{"Contact Me"}</a>
+                <a href="https://github.com/jack-flores/jackflores.com" class="mr-auto font-bold hover:text-red-500 outline hover:outline-gray-100 text-gray-200 outline-red-500">{format!("© Copyright Jack Flores {}", chrono::Utc::now().year())}</a>
+                <FooterItem href="https://github.com/jack-flores/jackflores.com"><Icon icon_id={IconId::BootstrapGithub}/></FooterItem>
+                <FooterItem href="https://www.linkedin.com/in/jack-flores-51a875264/"><Icon icon_id={IconId::BootstrapLinkedin}/></FooterItem>
+                <FooterItem href="mailto:jack.flores@tufts.edu"><Icon icon_id={IconId::LucideMail}/></FooterItem>
+                <FooterItem href="tel:+19499331333"><Icon icon_id={IconId::BootstrapTelephoneOutboundFill}/></FooterItem>
+                <a href="/contact" class="border-b-2 border-transparent hover:text-gray-100 hover:border-red-500 mx-1.5 sm:mx-6 sm:hidden xs:flex">{"Contact Me"}</a>
             </div>
         </div>
     }

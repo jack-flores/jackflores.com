@@ -17,7 +17,7 @@ pub fn passions() -> Html {
             </ImageCloud>
 
             <SectionsWrapper header="Passions">
-                <Section title="Music -- Production, Recording, Songwriting, and Performing" subtitle="2018 - present">
+                <Section title="Music -- Recording, Production, Songwriting, and Performing" subtitle="2018 - present">
                     {"I am a self-taught musician, having mastered several instruments, recording and production techniques, and songwriting. While I am not considering a career in music, I am always developing new songs and exploring new techniques. I plan on publishing my some of my work to Spotify and other platforms by the end of 2025. "}
                     {"I am currently working on my debut album! "}<PageBodyLink href="https://drive.google.com/drive/folders/1jUtb_CqUrgH01aZ9syHS_tV8oysVUKHR?usp=drive_link">{"Click here to check out my album demos!"}</PageBodyLink><br/><br/>
                     {"In addition to my solo work, I am also the front-man of my band, "} <PageBodyLink href="https://www.instagram.com/badneighboursma">{"Bad Neighbours"}</PageBodyLink> {". We formed in 2022 at Tufts and have been playing shows in the Boston area since 2024. "}<PageBodyLink href="https://youtu.be/2n20fK8jSko?si=i-EGJC1l9pR7IiAz&t=1872">{"Click here to watch our 1/28/2025 live performance of an original song -- The Runaway!"}</PageBodyLink><br/><br/>

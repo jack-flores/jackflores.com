@@ -3,6 +3,7 @@ use crate::components;
 use components::{footer::*, images::*, links::*, nav::*, section::*};
 
 use yew::prelude::*;
+use yew_icons::{Icon, IconId};
 
 #[function_component(Contact)]
 pub fn contact() -> Html {
@@ -10,12 +11,12 @@ pub fn contact() -> Html {
         <div class="flex flex-col min-h-screen">
             <NavBar/>
 
-            <SectionsWrapper header="Contact Me">
+            <SectionsWrapper header="Let's Connect">
                 <Section title="Methods of Contact" subtitle="">
-                        <b>{"Email "} {"(Preferred): "}</b><PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink><br/>
-                        <b>{"Mobile Phone: "}</b> <PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink><br/>
-                        <PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"Connect with me on LinkedIn"}</PageBodyLink><br/>
-                        <PageBodyLink href="https://github.com/jack-flores">{"Check out my GitHub"}</PageBodyLink>
+                        <div class="flex items-center font-bold"><PageBodyLink href="mailto:jack.flores@tufts.edu"><Icon icon_id={IconId::LucideMail}/></PageBodyLink>{"\u{00a0}Email (Preferred):\u{00a0}"}<PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink></div><br/>
+                        <div class="flex items-center font-bold"><PageBodyLink href="tel:+19499331333"><Icon icon_id={IconId::BootstrapTelephoneOutboundFill}/></PageBodyLink>{"\u{00a0}Mobile Phone:\u{00a0}"}<PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink></div><br/>
+                        <div class="flex items-center font-bold"><PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/"><Icon icon_id={IconId::BootstrapLinkedin}/></PageBodyLink>{"\u{00a0}Connect with me on\u{00a0}"}<PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink></div><br/>
+                        <div class="flex items-center font-bold"><PageBodyLink href="https://github.com/jack-flores/"><Icon icon_id={IconId::BootstrapGithub}/></PageBodyLink>{"\u{00a0}Check out my\u{00a0}"}<PageBodyLink href="https://github.com/jack-flores/">{"GitHub"}</PageBodyLink></div><br/>
                 </Section>
             </SectionsWrapper>
 

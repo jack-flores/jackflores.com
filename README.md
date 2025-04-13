@@ -1,4 +1,5 @@
 # Portfolio Website
+https://jackflores.com
 
 ## Tech stack:
 - Frontend:
@@ -28,7 +29,11 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
   - `npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch`
 
 - #### Step 3: start app
-  - in a new shell: `trunk serve`
+  - Option 1: just trunk
+    - in a new shell: `trunk serve`
+  - Option 2: docker
+    - `docker build -t frontend`
+    - `docker run -p 8080:8080 frontend`
 
 
 ### Backend
