@@ -7,14 +7,16 @@ use yew_icons::{Icon, IconId};
 
 #[function_component(Contact)]
 pub fn contact() -> Html {
+    let user = "jack.flores";
+    let domain = "tufts.edu";
+    let email = format!("mailto:{}@{}", user, domain);
     html! {
         <div class="flex flex-col min-h-screen">
             <NavBar/>
 
             <SectionsWrapper header="Let's Connect">
                 <Section title="Methods of Contact" subtitle="">
-                        <div class="flex items-center font-bold"><PageBodyLink href="mailto:jack.flores@tufts.edu"><Icon icon_id={IconId::LucideMail}/></PageBodyLink>{"\u{00a0}Email (Preferred):\u{00a0}"}<PageBodyLink href="mailto:jack.flores@tufts.edu">{"jack.flores@tufts.edu"}</PageBodyLink></div><br/>
-                        <div class="flex items-center font-bold"><PageBodyLink href="tel:+19499331333"><Icon icon_id={IconId::BootstrapTelephoneOutboundFill}/></PageBodyLink>{"\u{00a0}Mobile Phone:\u{00a0}"}<PageBodyLink href="tel:+19499331333">{"949-933-1333"}</PageBodyLink></div><br/>
+                        <div class="flex items-center font-bold"><PageBodyLink href={email.clone()}><Icon icon_id={IconId::LucideMail}/></PageBodyLink><PageBodyLink href={email.clone()}>{"\u{00a0}Email (Preferred)"}</PageBodyLink></div><br/>
                         <div class="flex items-center font-bold"><PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/"><Icon icon_id={IconId::BootstrapLinkedin}/></PageBodyLink>{"\u{00a0}Connect with me on\u{00a0}"}<PageBodyLink href="https://www.linkedin.com/in/jack-flores-51a875264/">{"LinkedIn"}</PageBodyLink></div><br/>
                         <div class="flex items-center font-bold"><PageBodyLink href="https://github.com/jack-flores/"><Icon icon_id={IconId::BootstrapGithub}/></PageBodyLink>{"\u{00a0}Check out my\u{00a0}"}<PageBodyLink href="https://github.com/jack-flores/">{"GitHub"}</PageBodyLink></div><br/>
                 </Section>
