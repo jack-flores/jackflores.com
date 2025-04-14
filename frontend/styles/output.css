@@ -672,17 +672,6 @@ video {
   flex: 1 1 0%;
 }
 
-@keyframes typing {
-  0% {
-    max-width: 0;
-    visibility: visible;
-  }
-
-  100% {
-    max-width: 1000px;
-  }
-}
-
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -693,8 +682,8 @@ video {
   }
 }
 
-.animate-typing {
-  animation: typing 2s steps(50, end) infinite alternate, blink 0.7s step-end infinite;
+.animate-blinking {
+  animation: blink 0.7s step-end infinite;
 }
 
 .list-outside {

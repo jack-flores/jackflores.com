@@ -7,37 +7,75 @@ use components::{footer::*, images::*, links::*, nav::*, section::*};
 use constants::{COLOR_BG_LIGHT_1, COLOR_BG_LIGHT_2, COLOR_TEXT_DECORATION, COLOR_TEXT_TITLE};
 use router::App;
 
-use gloo_timers::callback::Interval;
+use gloo_timers::callback::Timeout;
 use yew::prelude::*;
 
+#[allow(clippy::redundant_closure)]
 #[function_component(Home)]
 fn home() -> Html {
+    enum TypingState {
+        Typing,
+        Paused,
+        Deleting,
+    }
+
     let attributes = [
-        "Software Engineer",
-        "Musician",
-        "Sailor",
-        "Leader",
-        "Songwriter",
-        "Rust Enthusiast",
-        "Music Engineer",
-        "Performer",
-        "Full-Stack Developer",
-        "Disc Golfer",
+        "Software Engineer.",
+        "Musician.",
+        "Sailor.",
+        "Leader.",
+        "Songwriter.",
+        "Rust Enthusiast.",
+        "Music Engineer.",
+        "Performer.",
+        "Full-Stack Developer.",
+        "Disc Golfer.",
     ];
 
-    let counter = use_state(|| 0);
-    let counter_clone = counter.clone();
+    let index = use_state(|| 0);
+    let index_clone = index.clone();
+    let state = use_state(|| TypingState::Typing);
+    let curr_segment = use_state(|| String::new());
+    let curr_segment_clone = curr_segment.clone();
 
     use_effect(move || {
-        let interval = Interval::new(4000, move || {
-            if *counter_clone + 1 < attributes.len() {
-                counter_clone.set(*counter_clone + 1);
-            } else {
-                counter_clone.set(0);
-            }
-        });
+        let typing_interval = 25;
+        let pause = 1500;
 
-        move || drop(interval)
+        let curr_attribute = attributes[*index_clone].to_string();
+
+        let timeout = match *state {
+            TypingState::Typing => {
+                if curr_segment_clone.len() < curr_attribute.len() {
+                    Timeout::new(typing_interval, move || {
+                        curr_segment_clone
+                            .set(curr_attribute[0..curr_segment_clone.len() + 1].to_string());
+                    })
+                } else {
+                    Timeout::new(pause, move || {
+                        state.set(TypingState::Paused);
+                    })
+                }
+            }
+            TypingState::Paused => Timeout::new(typing_interval, move || {
+                state.set(TypingState::Deleting);
+            }),
+            TypingState::Deleting => {
+                if !curr_segment_clone.is_empty() {
+                    Timeout::new(typing_interval, move || {
+                        curr_segment_clone
+                            .set(curr_attribute[0..curr_segment_clone.len() - 1].to_string());
+                    })
+                } else {
+                    Timeout::new(typing_interval, move || {
+                        state.set(TypingState::Typing);
+                        index_clone.set((*index_clone + 1) % attributes.len());
+                    })
+                }
+            }
+        };
+
+        move || drop(timeout)
     });
 
     html! {
@@ -52,8 +90,8 @@ fn home() -> Html {
 
             <div class={format!("md:text-3xl sm:text-2xl text-lg text-{title} font-bold flex flex-wrap justify-center bg-gradient-to-r from-{bg_l_1} via-{bg_l_2} to-{bg_l_1} p-1", bg_l_1 = COLOR_BG_LIGHT_1, bg_l_2 = COLOR_BG_LIGHT_2, title = COLOR_TEXT_TITLE)}>
                 <h2>{"My name is Jack Flores, and I'm a\u{00a0}"}</h2>
-                <h2 class={format!("inline-block animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-{title} underline decoration-double decoration-{deco}", deco = COLOR_TEXT_DECORATION, title = COLOR_TEXT_TITLE)}>
-                    {{ attributes[*counter] }}{"."}
+                <h2 class={format!("inline-block animate-blinking whitespace-nowrap border-r-4 border-r-{title} underline decoration-double decoration-{deco}", deco = COLOR_TEXT_DECORATION, title = COLOR_TEXT_TITLE)}>
+                    {{ curr_segment.as_str() }}
                 </h2>
             </div>
 
