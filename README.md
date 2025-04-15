@@ -55,3 +55,4 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
 - Fullstack rust app example: https://github.com/wpcodevo/fullstack-rust-app
 - 'Add Tailwind CSS to your Yew project': https://www.youtube.com/watch?v=DEWoizX96k8
 - Took inspiration for tailwind components from here: https://freefrontend.com/
+- Zero To Production In Rust: https://www.zero2prod.com/
