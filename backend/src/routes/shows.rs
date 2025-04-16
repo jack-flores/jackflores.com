@@ -6,14 +6,20 @@ use uuid::Uuid;
 
 #[derive(MultipartForm)]
 pub struct ShowFormData {
-    date: Text<NaiveDateTime>,
+    city: Text<String>,
+    date: Text<NaiveDate>,
     poster: Option<Bytes>,
+    state: Text<String>,
+    ticket_link: Text<String>,
     venue: Text<String>,
 }
 
 pub struct ShowRecord {
-    date: NaiveDateTime,
+    city: String,
+    date: NaiveDate,
     poster: Option<Vec<u8>>,
+    state: String,
+    ticket_link: String,
     venue: String,
 }
 
@@ -27,13 +33,16 @@ pub async fn post_show(
     };
     match sqlx::query!(
         r#"
-        INSERT INTO shows (id, date, poster, venue)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO shows (id, city, date, poster, state, ticket_link, venue)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
         "#,
         Uuid::new_v4(),
+        record.city,
         record.date,
         record.poster,
-        &record.venue
+        record.state,
+        record.ticket_link,
+        record.venue
     )
     .execute(pool.get_ref())
     .await
@@ -46,7 +55,13 @@ pub async fn post_show(
     }
 }
 
+// TODO
+// pub async fn get_all_shows() {
+
+// }
+
 async fn validate(form: ShowFormData) -> Result<ShowRecord, std::io::Error> {
+    let city = form.city.into_inner();
     let poster = match &form.poster {
         Some(poster) => match validate_pdf(poster) {
             Ok(()) => Some(poster.data.to_vec()),
@@ -54,12 +69,34 @@ async fn validate(form: ShowFormData) -> Result<ShowRecord, std::io::Error> {
         },
         None => None,
     };
+    let state = form.state.into_inner();
+    let ticket_link = form.ticket_link.into_inner();
+    let venue = form.venue.into_inner();
+    let venue = match validate_venue(&venue) {
+        Ok(()) => venue,
+        Err(e) => return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, e)),
+    };
     let record = ShowRecord {
+        city,
         date: form.date.into_inner(),
         poster,
-        venue: form.venue.into_inner(),
+        state,
+        ticket_link,
+        venue,
     };
     Ok(record)
+}
+
+fn validate_venue(venue: &str) -> Result<(), std::io::Error> {
+    let venue = venue.trim();
+
+    if venue.is_empty() {
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::InvalidData,
+            "Empty venue field.",
+        ));
+    }
+    Result::Ok(())
 }
 
 pub fn validate_pdf(file: &Bytes) -> Result<(), std::io::Error> {

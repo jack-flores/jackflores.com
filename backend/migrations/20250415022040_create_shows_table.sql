@@ -2,7 +2,10 @@
 CREATE TABLE shows(
     id uuid NOT NULL,
     PRIMARY KEY (id),
-    date TIMESTAMP NOT NULL,
+    city TEXT NOT NULL,
+    date DATE NOT NULL,
     poster BYTEA,
+    state TEXT NOT NULL,
+    ticket_link TEXT,
     venue TEXT NOT NULL
 );
