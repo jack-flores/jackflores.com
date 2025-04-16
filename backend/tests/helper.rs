@@ -1,8 +1,8 @@
 use backend::configuration::{DatabaseSettings, get_configuration};
 use backend::startup::run;
 
-use std::net::TcpListener;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
+use std::net::TcpListener;
 use uuid::Uuid;
 
 pub struct TestApp {

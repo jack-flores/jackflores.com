@@ -41,7 +41,7 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
   - `cd backend`
 
 - #### Run test suite
-  - `cargo test`
+  - `cargo test --test main`
 
 - #### Run dev server
   - `cargo build`
