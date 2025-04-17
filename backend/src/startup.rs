@@ -1,4 +1,4 @@
-use crate::routes::{health_check, post_show};
+use crate::routes::{get_all_shows, health_check, post_show};
 
 use actix_web::{App, HttpServer, dev::Server, web};
 use sqlx::PgPool;
@@ -10,6 +10,7 @@ pub fn run(listener: TcpListener, db_pool: PgPool) -> Result<Server, std::io::Er
         App::new()
             .route("/health_check", web::get().to(health_check))
             .route("/shows", web::post().to(post_show))
+            .route("/shows", web::get().to(get_all_shows))
             .app_data(db_pool.clone())
     })
     .listen(listener)?

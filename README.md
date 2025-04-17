@@ -46,13 +46,37 @@ I chose Rust over JavaScript for this project for many reasons. While I love JS 
 - #### Run dev server
   - `cargo build`
   - `cargo run`
+## Backend API -- In Development
+I am building an API to manage records of my live performances. I will soon have a shows page that will fetch every show record from the database and display them on the webpage.
+  - `POST /shows`: create a show record
+    - Required fields:
+      - `city`: nonempty string
+      - `date`: string in YYYY-MM-DD format
+      - `state`: valid state code (e.g. MA)
+      - `venue`: nonempty string
+    - Optional fields:
+      - `poster`: pdf
+      - `ticket_link`: url
+    - Example: `curl -X POST http://localhost:8000/shows \-F "city=Somerville" \-F "date=2025-4-20" \-F "state=MA" \-F "ticket_link=https://google.com" \-F "venue=The Jungle"`
+    - Returns: 
+      - 201 Created if all fields pass validation and database record is created
+      - 400 Bad Request if any fields are in bad format or any required fields are missing
+      - 500 Internal Server Error if a database error occurs
+  - `GET /shows`: get all existing shows
+    - Example: `curl -X GET http://localhost:8000/shows`
+    - Returns:
+        - 200 Ok with a json vector of all existing show records, or
+        - 500 Internal Server Error if a database error occurs
+
 
 
 ## References
 - Rust docs: https://docs.rs/
 - Yew docs: https://yew.rs/docs/getting-started/introduction
 - Tailwind docs: https://tailwindcss.com/docs/installation
+- Zero To Production In Rust: https://www.zero2prod.com/
 - Fullstack rust app example: https://github.com/wpcodevo/fullstack-rust-app
 - 'Add Tailwind CSS to your Yew project': https://www.youtube.com/watch?v=DEWoizX96k8
 - Took inspiration for tailwind components from here: https://freefrontend.com/
-- Zero To Production In Rust: https://www.zero2prod.com/
+- Icons from https://finnbear.github.io/yew_icons/
+- Favicon from https://favicon.io/favicon-generator/
