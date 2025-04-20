@@ -59,30 +59,9 @@ async fn post_shows_returns_201_for_valid_form_data() {
 }
 
 #[tokio::test]
-async fn post_shows_returns_400_for_bad_part_types() {
+async fn post_shows_returns_400_for_malformed_parts() {
     let app = spawn_app().await;
     let client = Client::new();
-
-    // city field empty
-    let form = multipart::Form::new()
-        .text("date", DATE)
-        .text("city", "")
-        .text("state", STATE)
-        .text("ticket_link", TICKET_LINK)
-        .text("venue", VENUE);
-
-    let response = client
-        .post(&format!("{}/shows", &app.address))
-        .header(
-            "Content-Type",
-            format!("multipart/form-data; boundary={}", form.boundary()),
-        )
-        .multipart(form)
-        .send()
-        .await
-        .expect("Failed to execute request.");
-
-    assert_eq!(400, response.status().as_u16());
 
     // date not a NaiveDate
     let bad_date = "04-15".to_string(); // missing year
@@ -106,6 +85,35 @@ async fn post_shows_returns_400_for_bad_part_types() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "An error occurred processing field: date",
+        response.text().await.unwrap()
+    );
+
+    // date bad format
+    let form = multipart::Form::new()
+        .text("city", CITY)
+        .text("date", "bad date")
+        .text("state", STATE)
+        .text("ticket_link", TICKET_LINK)
+        .text("venue", VENUE);
+
+    let response = client
+        .post(&format!("{}/shows", &app.address))
+        .header(
+            "Content-Type",
+            format!("multipart/form-data; boundary={}", form.boundary()),
+        )
+        .multipart(form)
+        .send()
+        .await
+        .expect("Failed to execute request.");
+
+    assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "An error occurred processing field: date",
+        response.text().await.unwrap()
+    );
 
     // ticket_link not a valid link
     let form = multipart::Form::new()
@@ -127,6 +135,7 @@ async fn post_shows_returns_400_for_bad_part_types() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!("Invalid ticket link.", response.text().await.unwrap());
 
     // bad file type
     let file_bytes = tokio::fs::read("tests/bad_file.txt")
@@ -158,6 +167,10 @@ async fn post_shows_returns_400_for_bad_part_types() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "Poster file not a valid pdf.",
+        response.text().await.unwrap()
+    );
 
     // invalid state
     let form = multipart::Form::new()
@@ -179,6 +192,7 @@ async fn post_shows_returns_400_for_bad_part_types() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!("Invalid state.", response.text().await.unwrap());
 
     // venue not a string
     let file_bytes_clone = tokio::fs::read("tests/test_poster.pdf")
@@ -209,6 +223,10 @@ async fn post_shows_returns_400_for_bad_part_types() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "An error occurred processing field: venue",
+        response.text().await.unwrap()
+    );
 }
 
 #[tokio::test]
@@ -261,6 +279,10 @@ async fn post_shows_with_missing_data_returns_400() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "Required field is missing: date",
+        response.text().await.unwrap()
+    );
 
     // no venue
     let form = multipart::Form::new()
@@ -281,11 +303,15 @@ async fn post_shows_with_missing_data_returns_400() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!(
+        "Required field is missing: venue",
+        response.text().await.unwrap()
+    );
 
-    // date bad format
+    // city field exists but is empty
     let form = multipart::Form::new()
-        .text("city", CITY)
-        .text("date", "bad date")
+        .text("date", DATE)
+        .text("city", "")
         .text("state", STATE)
         .text("ticket_link", TICKET_LINK)
         .text("venue", VENUE);
@@ -302,4 +328,27 @@ async fn post_shows_with_missing_data_returns_400() {
         .expect("Failed to execute request.");
 
     assert_eq!(400, response.status().as_u16());
+    assert_eq!("Empty city field.", response.text().await.unwrap());
+
+    // venue field exists but is empty
+    let form = multipart::Form::new()
+        .text("date", DATE)
+        .text("city", CITY)
+        .text("state", STATE)
+        .text("ticket_link", TICKET_LINK)
+        .text("venue", "");
+
+    let response = client
+        .post(&format!("{}/shows", &app.address))
+        .header(
+            "Content-Type",
+            format!("multipart/form-data; boundary={}", form.boundary()),
+        )
+        .multipart(form)
+        .send()
+        .await
+        .expect("Failed to execute request.");
+
+    assert_eq!(400, response.status().as_u16());
+    assert_eq!("Empty venue field.", response.text().await.unwrap());
 }
