@@ -12,13 +12,8 @@ pub fn experience() -> Html {
 
             <SectionsWrapper header="Work Experience">
                 <Section title="Onwards HR -- Associate Software Engineer" subtitle="Decemebr 2025 - Present | Remote">
-                    {"My current role! I have been working for "}<PageBodyLink href="https://www.onwardshr.com/">{"Onwards HR"}</PageBodyLink>{" since December 2025!"}<br/><br/>
-
-                    <b>{"Highlights from the work I've done at Onwards:"}</b><br/>
-                    <ul class="list-disc list-outside pl-4">
-                        <li>{"Wrote software in Typescript."}</li>
-                    </ul><br/>
-                    <b>{"Tools Used: "}</b> {"Typescript, Node.js, PostgreSQL, Git/GitHub, AWS, CI/CD"}
+                    {"My current role! I have been working for "}<PageBodyLink href="https://www.onwardshr.com/">{"Onwards HR"}</PageBodyLink>{" since December 2025. I will update this section with work I have been doing soon!"}<br/><br/>
+                    <b>{"Tools Used: "}</b> {"Typescript, Angular.js, PostgreSQL, Git/GitLab, AWS, CI/CD"}
                 </Section>
                 <Section title="The MITRE Corporation -- Computer Science Intern" subtitle="June - August 2024 | Bedford, MA">
                     {"At "} <PageBodyLink href="https://www.mitre.org/">{"The MITRE Corporation"}</PageBodyLink> {", I interned within the Center For Securing the Homeland and worked on projects supporting the "} <PageBodyLink href="https://www.dhs.gov/science-and-technology/hssedi">{"Homeland Security Systems Engineering and Development Institute FFRDC"} </PageBodyLink> {". I worked on two renowned projects -- "} <PageBodyLink href="https://www.cve.org/">{"Common Vulnerabilities and Exposures (CVE)"}</PageBodyLink> {", and "} <PageBodyLink href="https://cwe.mitre.org/">{"Common Weakness Enumeration (CWE)"}</PageBodyLink> {". I was honored to contribute to two crucial projects that are having a positive impact in the world."}<br/><br/>

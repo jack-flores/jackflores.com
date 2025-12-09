@@ -98,15 +98,15 @@ fn home() -> Html {
 
             <SectionsWrapper>
                 <Section title="about me" subtitle="Engineer. Leader. Artist.">
-                    {"I am a software engineer, currently at "}<PageBodyLink href="https://www.onwardshr.com/">{"Onwards HR"}</PageBodyLink>{"! I graduated from Tufts University with a Bachelor of Science in Computer Science and a minor in Engineering Management. After four years of balancing a rigorous course load, a varsity sport, leading a rock band, and working two incredible internships, my skillset and work ethic are exceptional. I have a demonstrated aptitude for leadership, having twice been voted co-captain by my teammates in varsity athletics."}<br/><br/>
+                    {"I am a software engineer, currently at "}<PageBodyLink href="https://www.onwardshr.com/">{"Onwards HR"}</PageBodyLink>{"! I graduated from Tufts University in May 2025 with a Bachelor of Science in Computer Science and a minor in Engineering Management. After four years of balancing a rigorous course load, a varsity sport, leading a rock band, and working two incredible internships, my skillset and work ethic are exceptional. I have a demonstrated aptitude for leadership, having twice been voted co-captain by my teammates in varsity athletics."}<br/><br/>
                     {"I built this website to demonstrate my capabilities as a fullstack developer while providing an easily navigable portfolio. Everything you see was "} <b>{"built from scratch using Rust"}</b>{" -- my favorite programming language! Check out this project's "}
                     <PageBodyLink href="https://github.com/jack-flores/jackflores.com">{"GitHub repository linked here!"}</PageBodyLink>
                 </Section>
                 <Section title="skills" subtitle="Fullstack. Data. Teamwork.">
                     <div class="text-lg"><PageBodyLink href="/experience">{"Click here to read more about my work experience."}</PageBodyLink></div><br/>
-                    <b>{"Languages:"}</b> {" Typescript, Rust, C, C++, Python, Node.js, Next.js, React, HTML, Tailwind CSS, SQL"}<br/>
-                    <b>{"Tools:"}</b> {" PostgreSQL, Git/GitHub/GitLab, Docker, AWS, Azure, MongoDB, Prisma, Linux, Arduino, Pandas"}<br/>
-                    <b>{"Methodologies:"}</b> {" CI/CD, Unit Testing, Integration Testing, Agile"}
+                    <b>{"Languages & Frameworks:"}</b> {" Rust, C, C++, Python, JavaScript (TS, Angular, Node, Next, React), HTML, Tailwind CSS, SQL, Prisma"}<br/>
+                    <b>{"Databases:"}</b> {" PostgreSQL, MongoDB"}<br/>
+                    <b>{"Cloud & Devops:"}</b> {" AWS, Azure, Git/GitHub/GitLab, Docker, Linux, CI/CD, Unit & Integration Testing"}
                 </Section>
                 <Section title="projects" subtitle="Web. Embedded Systems. Graphics.">
                     <PageBodyLink href="/projects">{"Click here to visit my projects page!"}</PageBodyLink>
